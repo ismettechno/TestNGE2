@@ -15,6 +15,7 @@ public class _05_Enable {
     @Test
     public void Test1(){
         System.out.println("test 1 çalıştı");
+        driver.get("https://www.facebook.com/");
     }
 
     @Test(enabled = false)
@@ -25,6 +26,7 @@ public class _05_Enable {
     @Test
     public void Test3(){
         System.out.println("test 3 çalıştı");
+        driver.get("https://www.google.com/");
     }
 
     public static WebDriver driver;
