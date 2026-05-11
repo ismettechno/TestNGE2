@@ -2,6 +2,7 @@ package Gun02;
 
 import Utility.BaseDriver;
 import Utility.MyFunc;
+import Utility.WebTool;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
@@ -16,61 +17,57 @@ public class _01_SubscribeNewsLetter extends BaseDriver {
   4- Ayrı bir test ile Newsletter  Subscribe durumunu kontrol ediniz YES ise NO, NO ise YES yapınız.
        */
 
+    By link=By.linkText("Newsletter");
+    By subYes=By.xpath("//input[@type='radio' and @value='1']");
+    By cntBtn=By.xpath("//*[@value='Continue']");
+    By subNo=By.xpath("//input[@type='radio' and @value='0']");
+
     @Test
     public void SubscribeFunctionYes() {
-        WebElement newsLetterLink=driver.findElement(By.linkText("Newsletter"));
+        WebElement newsLetterLink=driver.findElement(link);
         newsLetterLink.click();
 
-        WebElement subscribeYes=driver.findElement(By.xpath("//input[@type='radio' and @value='1']"));
+        WebElement subscribeYes=driver.findElement(subYes);
         subscribeYes.click();
 
-        WebElement continueButton=driver.findElement(By.xpath("//*[@value='Continue']"));
+        WebElement continueButton=driver.findElement(cntBtn);
         continueButton.click();
 
-        WebElement msgLabel=BaseDriver.driver.
-                findElement(By.cssSelector("[class='alert alert-success alert-dismissible']"));
-
-        Assert.assertTrue(msgLabel.getText().toLowerCase().contains("success"));
+        WebTool.SuccessMessageValidation();
     }
 
     @Test
     public void SubscribeFunctionNo() {
-        WebElement newsLetterLink=driver.findElement(By.linkText("Newsletter"));
+        WebElement newsLetterLink=driver.findElement(link);
         newsLetterLink.click();
 
-        WebElement subscribeNo=driver.findElement(By.xpath("//input[@type='radio' and @value='0']"));
+        WebElement subscribeNo=driver.findElement(subNo);
         subscribeNo.click();
 
-        WebElement continueButton=driver.findElement(By.xpath("//*[@value='Continue']"));
+        WebElement continueButton=driver.findElement(cntBtn);
         continueButton.click();
 
-        WebElement msgLabel=BaseDriver.driver.
-                findElement(By.cssSelector("[class='alert alert-success alert-dismissible']"));
-
-        Assert.assertTrue(msgLabel.getText().toLowerCase().contains("success"));
+        WebTool.SuccessMessageValidation();
     }
 
     @Test
     public void SubscribeFunctionForBoth()
     {
-        WebElement newsLetterLink=driver.findElement(By.linkText("Newsletter"));
+        WebElement newsLetterLink=driver.findElement(link);
         newsLetterLink.click();
 
-        WebElement subscribeYes=driver.findElement(By.xpath("//input[@type='radio' and @value='1']"));
-        WebElement subscribeNo=driver.findElement(By.xpath("//input[@type='radio' and @value='0']"));
+        WebElement subscribeYes=driver.findElement(subYes);
+        WebElement subscribeNo=driver.findElement(subNo);
 
         if (subscribeYes.isSelected())
             subscribeNo.click();
         else
             subscribeYes.click();
 
-        WebElement continueButton=driver.findElement(By.xpath("//*[@value='Continue']"));
+        WebElement continueButton=driver.findElement(cntBtn);
         continueButton.click();
 
-        WebElement msgLabel=BaseDriver.driver.
-                findElement(By.cssSelector("[class='alert alert-success alert-dismissible']"));
-
-        Assert.assertTrue(msgLabel.getText().toLowerCase().contains("success"));
+        WebTool.SuccessMessageValidation();
     }
 
 }
