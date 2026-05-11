@@ -1,15 +1,44 @@
 package Gun02;
 
-public class _01_SubscribeNewsLetter {
+import Utility.BaseDriver;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.testng.Assert;
+import org.testng.annotations.Test;
+
+public class _01_SubscribeNewsLetter extends BaseDriver {
        /*
     Senaryo
   1- Siteyi açınız.
   2- Newsletter  Subscribe işlemini abone olunuz(YES)  , işlemin başarılı olduğunu kontrol ediniz.
   3- Ayrı bir test ile Newsletter  Subscribe işlemini abonelikten çıkınız(NO)
   4- Ayrı bir test ile Newsletter  Subscribe durumunu kontrol ediniz YES ise NO, NO ise YES yapınız.
+       */
 
-        */
+    @Test
+    public void SubscribeFunctionYes() {
+        WebElement newsLetterLink=driver.findElement(By.linkText("Newsletter"));
+        newsLetterLink.click();
 
+        WebElement subscribeYes=driver.findElement(By.xpath("//input[@type='radio' and @value='1']"));
+        subscribeYes.click();
 
+        WebElement continueButton=driver.findElement(By.xpath("//*[@value='Continue']"));
+        continueButton.click();
+
+        WebElement msgLabel=BaseDriver.driver.
+                findElement(By.cssSelector("[class='alert alert-success alert-dismissible']"));
+
+        Assert.assertTrue(msgLabel.getText().toLowerCase().contains("success"));
+    }
+
+    public void SubscribeFunctionNo() {
+
+    }
+
+    public void SubscribeFunctionForBoth()
+    {
+
+    }
 
 }
