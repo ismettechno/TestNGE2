@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
@@ -43,6 +44,7 @@ public class BaseDriver {
         WebElement loginBtn=driver.findElement(By.xpath("//*[@value='Login']"));
         loginBtn.click();
 
+        bekle.until(ExpectedConditions.titleContains("My Account"));
         Assert.assertTrue(driver.getTitle().equals("My Account"), "Login olunamadı");
 
         System.out.println("Login Testi Bitti");

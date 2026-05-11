@@ -50,9 +50,27 @@ public class _01_SubscribeNewsLetter extends BaseDriver {
         Assert.assertTrue(msgLabel.getText().toLowerCase().contains("success"));
     }
 
+    @Test
     public void SubscribeFunctionForBoth()
     {
+        WebElement newsLetterLink=driver.findElement(By.linkText("Newsletter"));
+        newsLetterLink.click();
 
+        WebElement subscribeYes=driver.findElement(By.xpath("//input[@type='radio' and @value='1']"));
+        WebElement subscribeNo=driver.findElement(By.xpath("//input[@type='radio' and @value='0']"));
+
+        if (subscribeYes.isSelected())
+            subscribeNo.click();
+        else
+            subscribeYes.click();
+
+        WebElement continueButton=driver.findElement(By.xpath("//*[@value='Continue']"));
+        continueButton.click();
+
+        WebElement msgLabel=BaseDriver.driver.
+                findElement(By.cssSelector("[class='alert alert-success alert-dismissible']"));
+
+        Assert.assertTrue(msgLabel.getText().toLowerCase().contains("success"));
     }
 
 }
