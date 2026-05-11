@@ -1,6 +1,7 @@
 package Gun02;
 
 import Utility.BaseDriver;
+import Utility.MyFunc;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
@@ -32,8 +33,21 @@ public class _01_SubscribeNewsLetter extends BaseDriver {
         Assert.assertTrue(msgLabel.getText().toLowerCase().contains("success"));
     }
 
+    @Test
     public void SubscribeFunctionNo() {
+        WebElement newsLetterLink=driver.findElement(By.linkText("Newsletter"));
+        newsLetterLink.click();
 
+        WebElement subscribeNo=driver.findElement(By.xpath("//input[@type='radio' and @value='0']"));
+        subscribeNo.click();
+
+        WebElement continueButton=driver.findElement(By.xpath("//*[@value='Continue']"));
+        continueButton.click();
+
+        WebElement msgLabel=BaseDriver.driver.
+                findElement(By.cssSelector("[class='alert alert-success alert-dismissible']"));
+
+        Assert.assertTrue(msgLabel.getText().toLowerCase().contains("success"));
     }
 
     public void SubscribeFunctionForBoth()
