@@ -15,8 +15,11 @@ public class _05_ContactUsParameter extends BaseDriver {
   3- Submit ettikten sonra url deki success yazısını doğrulayınız.
  */
 
+//    @Parameters({"mesajAdi","KonuAdi"})// xml deki parametre adı aynı olmak zorunda
+//    void contactUs(String gelenMesaj,String konu){
+
     @Test
-    @Parameters("mesaj")
+    @Parameters({"mesajAdi"}) // gelecek parametreye bağlı olduğundan SADECE XML den çalıştırılabilir
     public void contactUs(String gelenMesaj){
         WebElement contactUsBtn=driver.findElement(By.linkText("Contact Us"));
         contactUsBtn.click();

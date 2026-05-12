@@ -2,7 +2,13 @@
 <suite name="mySuit">
     <test name="myTest">
         <parameter name="mesajAdi" value="Merhaba testing dünyası, biz geldik"></parameter>
-        <parameter name="KonuAdi" value="Konu başlığımız"></parameter>
+        <classes>
+            <class name="Gun03._05_ContactUsParameter"></class>
+        </classes>
+    </test>
+
+    <test name="myTest2">
+        <parameter name="mesajAdi" value="TestNG XML in gücü"></parameter>
         <classes>
             <class name="Gun03._05_ContactUsParameter"></class>
         </classes>
