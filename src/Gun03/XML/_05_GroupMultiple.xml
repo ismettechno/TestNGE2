@@ -5,20 +5,19 @@
 
         <!--çalışacak classların yazıldığı bölüm-->
         <classes>
-            <class name="Gun03._04_Groups">
-                <methods>
-                    <exclude name="Test2"/>
-                </methods>
-            </class>
+            <class name="Gun03._04_Groups"></class>
         </classes>
 
 
-        <!-- hangi gruplar dışındakiler çalıştırılacak-->
+        <!-- hangi gruplar çalıştırılacak-->
         <groups>
             <run>
-                <exclude name="Smoke Test"></exclude>
+                <include name="Smoke Test"></include>
+                <include name="Regression"></include>
             </run>
         </groups>
+
+
 
     </test>
 </suite>
