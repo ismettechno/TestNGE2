@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <suite name="mySuit">
+
     <test name="myTest 1"> <!-- Test grubunun adı -->
         <classes>
             <class name="Gun02._03_EditAccount"></class>
@@ -13,4 +14,5 @@
             <class name="Gun01._06_Enable_2"></class>
         </classes>
     </test>
+
 </suite>
