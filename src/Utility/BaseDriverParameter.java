@@ -16,8 +16,8 @@ import org.testng.annotations.Parameters;
 import java.time.Duration;
 
 public class BaseDriverParameter {
-    public static WebDriver driver;
-    public static WebDriverWait bekle;
+    public WebDriver driver;
+    public WebDriverWait bekle;
 
     @BeforeClass
     @Parameters("browserTipi")
