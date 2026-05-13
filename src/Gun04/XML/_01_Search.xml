@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="mySuit">
+    <test name="myTest1">
+        <parameter name="searchText" value="mac"></parameter>
+        <classes>
+            <class name="Gun04._01_SearchFunctionality"></class>
+        </classes>
+    </test>
+
+    <test name="myTest2">
+        <parameter name="searchText" value="ipod"></parameter>
+        <classes>
+            <class name="Gun04._01_SearchFunctionality"></class>
+        </classes>
+    </test>
+
+    <test name="myTest3">
+        <parameter name="searchText" value="iphone"></parameter>
+        <classes>
+            <class name="Gun04._01_SearchFunctionality"></class>
+        </classes>
+    </test>
+</suite>
