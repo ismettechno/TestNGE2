@@ -15,7 +15,7 @@
     </test>
 
     <test name="myTest3">
-        <parameter name="searchText" value="iphone"></parameter>
+        <parameter name="searchText" value="samsung"></parameter>
         <classes>
             <class name="Gun04._01_SearchFunctionality"></class>
         </classes>
