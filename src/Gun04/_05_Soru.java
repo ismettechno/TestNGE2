@@ -34,9 +34,8 @@ public class _05_Soru extends BaseDriver {
     @DataProvider
     Object[] datalarim()
     {
-        Object[] aranacaklar={"mac","iphone","laptop","mouse"};
+        Object[] aranacaklar={"mac","iphone","samsung"};
         return  aranacaklar;
     }
-
 
 }
