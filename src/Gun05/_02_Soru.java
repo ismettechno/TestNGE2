@@ -45,3 +45,5 @@ public class _02_Soru extends BaseDriver {
 
     }
 }
+
+// TODO : https://www.ebay.co.uk/n/all-brands  deki test i yapalım aynı senaryo ile
